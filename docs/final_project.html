@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    </style>
+</head>
+
+<body onload="getPics()">
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <a href="index.html" class="nav-home">Home</a>
+        <a href="about.html" class="nav-about">About</a>
+        <a href="#" class="nav-assignments">Assignments</a>
+        <a href="final_project.html" class="nav-final-project">Final Project</a>
+        <a href="#" class="nav-contact">Contact</a>
+    </div>
+
+    <hr class="navbarDivider">
+    </hr>
+
+    <!-- About -->
+    <div class="about">
+        <h1> Final project </h1>
+        <p> This is the so called final project I wanted to do. </p>
+    </div>
+
+    <!-- https://stackoverflow.com/questions/67815853/how-do-i-make-an-image-full-screen-on-click -->
+    <!-- ! Remove placeholder ! -->
+    <div class="image-container">
+        <img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?w=900&t=st=1695795215~exp=1695795815~hmac=8d62757124cdf45990a839c06c9debfcec22c7bc72e8fecbc2c75b91def939aa" />
+    </div>
+    <div id="fullpage" onclick="this.style.display='none';"></div>
+
+    <script>
+        function getPics() { } //just for this demo
+        const imgs = document.querySelectorAll('.image-container img');
+        const fullPage = document.querySelector('#fullpage');
+
+        imgs.forEach(img => {
+            img.addEventListener('click', function () {
+                fullPage.style.backgroundImage = 'url(' + img.src + ')';
+                fullPage.style.display = 'block';
+            });
+        });
+    </script>
+
+</body>
+
+</html>
