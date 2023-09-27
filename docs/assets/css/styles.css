@@ -1,0 +1,277 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* font-family: Arial, sans-serif; */
+    background-color: #090311;
+    color: #fff;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+.plain-text {
+    display: flex;
+    flex-direction: column;
+    align-items: row;
+}
+
+.plain-text > * {
+    align-self: center;
+    text-align: center;
+    width: 80%;
+}
+
+hr {
+    margin-top: 14px;
+    color: white;
+    background-color: white;
+}
+
+.hr-content {
+    margin-top: 28px;
+    color: white;
+    background-color: white;
+}
+
+a {
+    color: #df3079;
+}
+
+.listElement {
+    display: flex;
+    flex-direction: column;
+    align-items: row;
+    /* text-align: center; */
+}
+
+.listElement > p {
+    margin: 4px;
+}
+
+.listElement > * {
+    align-self: center;
+}
+
+.listElement > li {
+    list-style-type: square;
+    list-style-position: outside;
+    color: #df3079;
+
+    padding: 0px;
+    margin: 0px;
+
+    align-self: center;
+}
+
+.listElement > li > ul > li {
+    list-style-type: lower-roman;
+    list-style-position: outside;
+    color: #f61ab0;
+
+    padding: 0px;
+    margin: 0px;
+
+    align-self: center;
+}
+
+.navbarDivider {
+    height: 2px;
+    color: white;
+    background-color: white;
+    margin-top: 0px;
+}
+
+/* About */
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: row;
+}
+
+.about>* {
+    align-self: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding-top: 4px;
+    padding-bottom: 0px;
+}
+
+.about>p {
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-right: 10%;
+    margin-left: 10%;
+    text-align: center;
+}
+
+/* Assignments */
+.assignments {
+    display: flex;
+    flex-direction: column;
+    align-items: row;
+
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.assignments>* {
+    align-self: center;
+}
+.assignment-grid > div > p {
+    position: absolute;
+    transform: translate(10%, -20%);
+    background-color: #090311;
+    padding: 6px;
+
+    color: #df3079;
+
+    border-radius: 8px;
+    border: #df3079;
+    border-style: solid;
+    border-width: 2px;
+
+    z-index: 1100;
+
+    animation: color-change 2s infinite;
+}
+
+.assignment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Adjust the number of columns as needed */
+    gap: 16px;
+    /* Adjust the gap between images as needed */
+}
+
+.zoom-image {
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+    transition: all 0.2s ease;
+    filter: brightness(70%);
+    filter: grayscale(100%);
+    /* Smooth transition effect */
+}
+
+.zoom-image:hover {
+    transform: scale(1.04);
+    filter: brightness(100%);
+    filter: grayscale(0%);
+    transition: all 0.2s ease;
+    /* Zoom in by 10% on hover */
+}
+
+/* NAVBAR */
+.navbar {
+    display: inline-flex;
+    flex-direction: row;
+
+    background: linear-gradient(to left, rgba(15, 0, 30, 0.726), rgba(99, 0, 0, 0.401)), url('https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+    background-size: cover;
+    background-position: 0px -100px;
+
+    /* background: #18092f; */
+    top: 0;
+    width: 100%;
+}
+
+.navbar a {
+    color: #fff;
+    text-align: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    /* text-shadow: #fff 0px 0px 2px; */
+    font-size: 18px;
+    position: relative;
+    /* Add this line */
+}
+
+.navbar a:nth-child(2) {
+    margin-left: auto;
+}
+
+.nav-home {
+    margin-left: 10px;
+}
+
+.nav-contact {
+    margin-right: 10px;
+}
+
+/* Adjust the position of the neon line to the bottom */
+.navbar a::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0;
+    bottom: 7px;
+    /* Place the line at the bottom */
+    left: 10%;
+    background: #df3079;
+    /* Neon Blue */
+    box-shadow: 0px 0px 2px 0px #df3079;
+    transition: width 0.3s, bottom 0.3s, opacity 0.3s;
+    /* Added opacity transition */
+}
+
+@keyframes color-change {
+    0% {
+        color:  #df3079;
+        border-color: #df3079;
+    }
+
+    30% {
+        color:  #df30b3;
+        border-color: #df30b3;
+    }
+
+    70% {
+        color:  #df30b3;
+        border-color: #df30b3;
+    }
+
+    100% {
+        color:  #df3079;
+        border-color: #df3079;
+    }
+}
+
+.navbar a:hover::after {
+    width: 80%;
+    bottom: 7px;
+    /* Keep the line at the bottom */
+    opacity: 1;
+    /* Make the line fully visible */
+}
+
+/* ---------------------- Fullscreen image mode styling is here -------------------- */
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: row;
+}
+.image-container > img {
+    align-self: center;
+    width: 78%;
+    filter: brightness(80%);
+    transform: scale(1.0);
+    transition: all 0.3s ease;
+}
+.image-container > img:hover {
+    filter: brightness(100%);
+    transform: scale(1.04);
+    transition: all 0.3s ease;
+}
+
+#fullpage {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat no-repeat;
+    background-position: center center;
+    background-color: rgba(0, 0, 0, 0.855);
+}
