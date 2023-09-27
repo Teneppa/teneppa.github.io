@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    </style>
+</head>
+
+<body onload="getPics()">
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <a href="index.html" class="nav-home">Home</a>
+        <a href="about.html" class="nav-about">About</a>
+        <a href="#" class="nav-assignments">Assignments</a>
+        <a href="final_project.html" class="nav-final-project">Final Project</a>
+        <a href="#" class="nav-contact">Contact</a>
+    </div>
+
+    <hr class="navbarDivider">
+    </hr>
+
+    <!-- Week agenda -->
+    <div class="about">
+        <h1> Week 2 - Project Management </h1>
+        <ul class="listElement">
+            <p>Tasks:</p>
+            <li>Give a short description of the project
+                <ul>
+                    <li>
+                        What is the system functionality?
+                    </li>
+                    <li>
+                        Why do you want to build this project?
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Include a picture showing your system (just a sketch drawn on a paper would be enough)
+            </li>
+        </ul>
+        <p> </p>
+    </div>
+
+    <hr>
+    </hr>
+
+    <div class="plain-text">
+        <h1>Description</h1>
+
+        <p>For the final project my first thought was making a new version of a mobile robot platform
+            I designed back in the days when I was still in upper secondary school.
+        </p>
+
+        <p>The platform is fairly robust, but the Fusion 360 model is a huge mess,
+            and the battery that I designed the robot around the robot is starting to be a thing of the past.
+        </p>
+
+        <p>
+            But the main motivation behind this revival is that the entire platform is 3D-printable,
+            except for the bolts, bearings and electronics, which makes this a fair bit more maker friendly.
+            But I guess only a bit.
+        </p>
+    </div>
+
+    <div class="image-container">
+        <img src="obsolete_1.png" />
+    </div>
+
+    <div class="plain-text">
+        <h1>Functionality</h1>
+        <p>
+            This platform is essentially a mobile robot, if it has a way to handle locomotion.
+        </p>
+        <p>
+            For the final version I wish to include a lidar with simple obstacle avoidance, but I am afraid that
+            this will definitely be outside the scope of this course. And for locomotion, I think that using only an
+            ESP32 will prove to be too difficult (concidering the vast amount of theorical knowledge needed, and
+            that I certainly lack on this area)
+            to be able to obtain any awareness of position in room, or trying
+            to map a room's structure.
+        </p>
+        <p>
+            What I want to obtain instead is to have an easily accessible open source platform
+            that is capable of holonomic motion.
+
+            The use cases I see for this kind of platform is sensor testing, as well as navigation algorithm testing.
+        </p>
+        <hr></hr>
+        <p>
+            For this kind of project, I have to stretch the rules a bit. In theory, this platform should
+            fullfill all of the required elements for a Fab Academy courses project.
+        </p>
+        <p>The core of this platform is a flat plane with a couple of cutouts. This could be done with a laser cutter.
+            For the electronics part I could do these things:
+            <ul class="listElement">
+                <li>Power management circuitry<ul>
+                    <li>Current measurement</li>
+                    <li>Cell voltage</li>
+                </ul></li>
+                <li>Integrated wheel control unit<ul>
+                    <li>Absolute encoders with magnets</li>
+                    <li>Velocity control</li>
+                </ul></li>
+                <li>Environment sensing<ul>
+                    <li>Spinning TOF sensor</li>
+                    <li>Locomotion based on optical flow estimation</li>
+                </ul></li>
+            </ul>
+        </p>
+        <p>And now that the project is in the starting point, I strongly believe that studying power management
+            design might prove to be the most useful one.
+        </p>
+    </div>
+
+    <!-- https://stackoverflow.com/questions/67815853/how-do-i-make-an-image-full-screen-on-click -->
+    <div id="fullpage" onclick="this.style.display='none';"></div>
+
+    <script>
+        function getPics() { } //just for this demo
+        const imgs = document.querySelectorAll('.image-container img');
+        const fullPage = document.querySelector('#fullpage');
+
+        imgs.forEach(img => {
+            img.addEventListener('click', function () {
+                fullPage.style.backgroundImage = 'url(' + img.src + ')';
+                fullPage.style.display = 'block';
+            });
+        });
+    </script>
+
+</body>
+
+</html>
